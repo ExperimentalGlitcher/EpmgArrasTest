@@ -455,7 +455,7 @@ Class.mmaTest = {
 Class.vulnturrettest_turret = {
     PARENT: "genericTank",
     COLOR: "grey",
-    HITS_OWN_TYPE: 'hard',
+    HITS_OWN_TYPE: 'never',
     LABEL: 'Shield',
     COLOR: 'teal',
     BODY: {
