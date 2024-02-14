@@ -1,0 +1,578 @@
+:root {
+    font-family: Ubuntu;
+    font-size: 14px;
+}
+
+.conceal {
+    -webkit-text-security: disc;
+}
+
+#mainBody {
+    background-color: #dbdbdb;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body {
+    font-family: Ubuntu;
+    font-size: 14px;
+    background-image: url('./osa_background_tile.png');
+    background-repeat: repeat;
+    background-color: gray;
+}
+
+html,
+body,
+canvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    image-rendering: optimizeSpeed;
+    image-rendering: pixelated;
+}
+
+#gameName {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: small;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+options_header {
+    padding: 0;
+    padding-bottom: 5px;
+    margin: 0;
+    font-size: small;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-size: small;
+    color: #484848;
+    text-align: center;
+}
+
+h4 {
+    font-size: small;
+    color: #1B3353;
+    /*color: #8ABC3F;*/
+    text-align: center;
+}
+
+h5 {
+    font-size: x-small;
+    color: #484848;
+    text-align: center;
+}
+
+small {
+    font-size: x-small;
+}
+
+a:link,
+a:visited {
+    color: #484848;
+}
+
+a:hover {
+    color: #B5B5B9;
+}
+
+ul {
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
+input {
+    text-align: center;
+    font-family: Ubuntu;
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+    box-sizing: border-box;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+input.checkbox {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    position: relative;
+    top: -2px;
+    overflow: hidden;
+}
+
+#playerNameInput {
+    padding: 10px;
+    font-size: large;
+}
+
+#playerKeyInput {
+    padding: 3px;
+    color: gray;
+}
+
+input:focus,
+input.focus {
+    border: solid 1px #CCCCCC;
+    box-shadow: 0 0 3px 1px #DDDDDD;
+}
+
+div {
+    -webkit-user-select: none;
+    /* webkit (safari, chrome) browsers */
+    -moz-user-select: none;
+    /* mozilla browsers */
+    -khtml-user-select: none;
+    /* webkit (konqueror) browsers */
+    -ms-user-select: none;
+    /* IE10+ */
+}
+
+.serverSelector {
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 13px;
+    padding-left: 10px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.15);
+}
+
+.serverSelector tr {
+    color: #828282;
+    cursor: pointer;
+}
+
+.serverSelector tr.selected {
+    color: #1B3353;
+    /*color: #8ABC3F;*/
+    cursor: default;
+}
+
+#startMenu {
+    position: relative;
+    margin: auto;
+    width: 1150px;
+    padding: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #DDE6EB;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#startMenuHeader {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+}
+
+.startMenuHolder {
+    width: 350px;
+    height: 410px;
+    padding: 10px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.sliderHolder {
+    width: 350px;
+    height: 355px;
+    overflow: hidden;
+}
+
+tfoot {
+    text-align: center;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+td {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    -webkit-transition: top 500ms;
+    -moz-transition: top 500ms;
+    -o-transition: top 500ms;
+    transition: top 500ms;
+}
+
+#startMenuSlidingContent {
+    height: 335px;
+}
+
+#startMenuSlidingTrigger {
+    cursor: pointer;
+    height: 15px;
+}
+
+#startMenuSlidingTrigger:hover {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+update {
+    color: #D83848;
+    font-weight: bold;
+}
+
+.titleSpan {
+    padding-left: 10px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.shrinkable {
+    padding-left: 0px;
+    width: 360px;
+}
+
+#patchNotes {
+    max-width: 330px;
+    height: calc(100% - 100px);
+    padding: 5px 20px 10px;
+    overflow: hidden auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.15);
+}
+
+#patchNotes div {
+    > .title {
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    > date {
+        color: rgba(0, 0, 0, 0.45);
+        font-style: italic;
+    }
+
+    > ul li {
+        margin-left: 1em;
+        margin-bottom: .5em;
+    }
+
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: .1em;
+        background-color: gray;
+    }
+}
+
+.shadowScroll {
+    overflow-y: scroll;
+    background:
+        /* Shadow covers */
+        linear-gradient(#dde6eb 30%, rgba(255, 255, 255, 0)),
+        linear-gradient(rgba(255, 255, 255, 0), #dde6eb 70%) 0 100%,
+        /* Shadows */
+        radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+        radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: #dde6eb;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
+}
+
+#startButton {
+    font-family: Ubuntu;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: larger;
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #336699;
+    /*background: #A9D86D;*/
+    border: 0;
+    border-bottom: 2px solid #1B3353;
+    /*border-bottom: 2px solid #8ABC3F;*/
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #1B3353;
+    /*-webkit-box-shadow: inset 0 -2px #8ABC3F;*/
+    box-shadow: inset 0 -2px #1B3353;
+    /*box-shadow: inset 0 -2px #8ABC3F;*/
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#startButton:active,
+#startButton:hover {
+    top: 1px;
+    background: #1B3353;
+    /*background: #8ABC3F;*/
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#bottomHolder {
+    width: 370px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+a.link {
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: smaller;
+    margin: 2px;
+    padding: 5px;
+    position: relative;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.discord {
+    background: #7289da;
+    border-bottom: 2px solid #6175ba;
+    box-shadow: inset 0 -2px #6175ba;
+    -webkit-box-shadow: inset 0 -2px #6175ba;
+}
+.discord:active,
+.discord:hover {
+    top: 1px;
+    background: #6175ba;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.revolt {
+    background: #fd6671;
+    border-bottom: 2px solid #ed4245;
+    box-shadow: inset 0 -2px #ed4245;
+    -webkit-box-shadow: inset 0 -2px #ed4245;
+}
+.revolt:active,
+.revolt:hover {
+    top: 1px;
+    background: #ed4245;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.reddit {
+    background: #f75401;
+    border-bottom: 2px solid #d24a01;
+    box-shadow: inset 0 -2px #d24a01;
+    -webkit-box-shadow: inset 0 -2px #d24a01;
+}
+.reddit:active,
+.reddit:hover {
+    top: 1px;
+    background: #d24a01;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.original {
+    background: #77bf79;
+    border-bottom: 2px solid #679c68;
+    box-shadow: inset 0 -2px #679c68;
+    -webkit-box-shadow: inset 0 -2px #679c68;
+}
+.original:active,
+.original:hover {
+    top: 1px;
+    background: #679c68;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.developer {
+    background: #454b7f;
+    border-bottom: 2px solid #313454;
+    box-shadow: inset 0 -2px #313454;
+    -webkit-box-shadow: inset 0 -2px #313454;
+}
+.developer:active,
+.developer:hover {
+    top: 1px;
+    background: #313454;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.youtube {
+    background: #f71701;
+    border-bottom: 2px solid #d21401;
+    box-shadow: inset 0 -2px #d21401;
+    -webkit-box-shadow: inset 0 -2px #d21401;
+}
+.youtube:active,
+.youtube:hover {
+    top: 1px;
+    background: #d21401;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.github {
+    background: #666666;
+    border-bottom: 2px solid #333333;
+    -webkit-box-shadow: inset 0 -2px #333333;
+    box-shadow: inset 0 -2px #333333;
+}
+.github:active,
+.github:hover {
+    top: 1px;
+    background: #333333;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#startMenuWrapper {
+    -webkit-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -ms-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s;
+    overflow: hidden;
+}
+
+.nopadding {
+    padding: 0;
+    margin: 0;
+}
+
+#startMenu ul {
+    margin: 10px;
+    padding: 10px;
+    margin-top: 0;
+}
+
+#startMenu .input-error {
+    color: red;
+    opacity: 0;
+    font-size: 12px;
+}
+
+#startMenuWrapper {
+    z-index: 2;
+}
+
+#gameAreaWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#gameCanvas {
+    position: absolute;
+}
+
+#chatInput {
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 30px;
+    top: 60%;
+    left: calc(50% - 149px);
+    box-shadow: 0px 0px 5px 2px darkgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    background-color: #ffffff88;
+}
+
+input [type="image"]:focus {
+    border: none;
+    outline: 1px solid transparent;
+    border-style: none;
+}
+
+*:focus {
+    outline: 1px solid transparent;
+    border-style: none;
+}
