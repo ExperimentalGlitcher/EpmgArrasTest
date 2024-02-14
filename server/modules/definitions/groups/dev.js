@@ -458,15 +458,15 @@ Class.vulnturrettest_turret = {
     HITS_OWN_TYPE: 'hard',
     LABEL: 'Shield',
     COLOR: 'teal',
+    BODY: {
+        HEALTH: 1,
+    },
 }
 
 Class.vulnturrettest = {
     PARENT: ["genericTank"],
     LABEL: "Vulnerable Turrets",
     TOOLTIP: "[DEV NOTE] Vulnerable turrets are still being worked on and may not function as intended!",
-    BODY: {
-        FOV: 2,
-    },
     DANGER: 6,
     GUNS: [{
         POSITION: {},
