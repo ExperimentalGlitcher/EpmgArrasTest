@@ -1533,12 +1533,6 @@ class Entity extends EventEmitter {
         }
         // TODO: FIX CLIENT MAKING EVERYTHING FLASH WHEN A VULN TURRET DIES, and display health
         if (isInvulnerable) {
-            this.on('tick', () => {
-                if (this.shield.amount < this.shield.max || this.health.amount < this.health.max) {
-                    this.health.display();
-                    this.shield.display();
-                }
-            })
             this.on('dead', () => {util.remove(this.master.turrets, this.master.turrets.indexOf(this))})
         }
         this.settings.drawShape = false;
