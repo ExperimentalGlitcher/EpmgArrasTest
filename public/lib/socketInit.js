@@ -580,18 +580,6 @@ const process = (z = {}) => {
         }
         for (let tur of z.turrets) {
             tur = process(tur);
-            // Kill them
-            tur.render.status.set(tur.health === 1 ? 'dying' : 'killed');
-            // And only push them if they're not entirely dead and still visible
-            if (tur.render.status.getFade() !== 0 && util.isInView(tur.render.x - global.player.renderx, tur.render.y - global.player.rendery, tur.size, true)) {
-                output.push(tur);
-            } else {
-                if (tur.render.textobjs != null) {
-                    for (let o of tur.render.textobjs) {
-                        o.remove();
-                    }
-                }
-            }
         }
     }
     // Return our monsterous creation
