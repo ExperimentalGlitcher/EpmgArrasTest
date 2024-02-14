@@ -1528,7 +1528,7 @@ class Entity extends EventEmitter {
         // It will not be in collision calculations any more nor shall it be seen or continue to run independently.
         if (!isInvulnerable) {
             this.removeFromGrid();
-            this.skipLife = true;
+            //this.skipLife = true;
         }
         // TODO: FIX CLIENT MAKING EVERYTHING FLASH WHEN A VULN TURRET DIES, and display health
         if (isInvulnerable) this.on('dead', () => {util.remove(this.master.turrets, this.master.turrets.indexOf(this))})
