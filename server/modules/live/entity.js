@@ -1529,7 +1529,7 @@ class Entity extends EventEmitter {
         if (!isInvulnerable) {
             this.removeFromGrid();
             this.skipLife = true;
-            this.isGhost = false;
+            this.settings.drawHealth = true;
         }
         // TODO: FIX CLIENT MAKING EVERYTHING FLASH WHEN A VULN TURRET DIES, and display health
         if (isInvulnerable) {
